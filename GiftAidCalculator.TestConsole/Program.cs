@@ -4,6 +4,8 @@ namespace GiftAidCalculator.TestConsole
 {
 	class Program
 	{
+	    private static GiftAidCalculator GiftAidCalculator = CreateGiftAidCalculator(17.5M);
+
 		static void Main(string[] args)
 		{
 			// Calc Gift Aid Based on Previous
@@ -15,8 +17,12 @@ namespace GiftAidCalculator.TestConsole
 
 		static decimal GiftAidAmount(decimal donationAmount)
 		{
-			var gaRatio = 17.5m / (100 - 17.5m);
-			return donationAmount * gaRatio;
+		    return GiftAidCalculator.CalculateGiftAid(donationAmount);
 		}
+
+	    static GiftAidCalculator CreateGiftAidCalculator(decimal taxRate)
+	    {
+	        return new GiftAidCalculator(new InMemoryTaxRateRepository(taxRate), new InMemorySupplementaryEventTaxRateRepository(), new GiftAidRounder());
+	    }
 	}
 }

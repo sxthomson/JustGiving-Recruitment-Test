@@ -50,12 +50,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GiftAidRounder.cs" />
+    <Compile Include="GiftAidCalculator.cs" />
+    <Compile Include="InMemorySupplementaryEventTaxRateRepository.cs" />
+    <Compile Include="InMemoryTaxRateRepository.cs" />
+    <Compile Include="Interfaces\ICalculateGiftAid.cs" />
+    <Compile Include="Interfaces\IDecimalRounder.cs" />
+    <Compile Include="Interfaces\IGetSupplementaryEventTaxRate.cs" />
+    <Compile Include="Interfaces\ISetTaxRate.cs" />
+    <Compile Include="Interfaces\IGetTaxRate.cs" />
+    <Compile Include="Models\FundraisingEventType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
